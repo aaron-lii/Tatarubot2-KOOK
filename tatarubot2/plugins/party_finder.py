@@ -67,7 +67,11 @@ async def party_finder_run(data_centre=""):
         text_list.append(text_now)
 
     if not text_list:
-        return "当前无人上传招募信息"
+        res = [{"type": "section",
+                "text": {"type": "kmarkdown", "content": "当前无人上传招募信息"}, }]
+        cards = [{"type": "card", "theme": "warning", "size": "lg", "modules": res}]
+        await party_finder.send(MessageSegment.Card(cards))
+        return
 
     off_set = 30
     # cards = []
