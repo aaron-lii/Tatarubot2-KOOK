@@ -58,16 +58,18 @@ async def get_bili_detail(bili_url):
 
 
 async def get_nuannuan():
-    try:
-        bili_url = await get_bili_url()
-        msg = await get_bili_detail(bili_url)
+    # try:
+    #     bili_url = await get_bili_url()
+    #     msg = await get_bili_detail(bili_url)
+    #
+    #     img_bytes = str2img(msg)
+    #     msg = Message([MessageSegment.image(img_bytes)])
+    # except Exception as e:
+    #     # msg = "Error: {}".format(type(e))
+    #     msg = "暖暖请看qq文档： " + qq_doc
+    #     traceback.print_exc()
 
-        img_bytes = str2img(msg)
-        msg = Message([MessageSegment.image(img_bytes)])
-    except Exception as e:
-        # msg = "Error: {}".format(type(e))
-        msg = "暖暖请看qq文档： " + qq_doc
-        traceback.print_exc()
+    msg = "暖暖请看qq文档： " + qq_doc
 
     await nuannuan.finish(msg)
 
