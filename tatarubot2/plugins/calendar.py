@@ -132,7 +132,7 @@ async def run():
             res += res_format(item) + "\n"
 
     if last_download_time != 0:
-        res += "\n日历更新时间: " + str(last_download_time).split(".")[0].replace("-", ".")
+        res += "\n日历更新时间: " + str(last_download_time).split(".")[0].replace("-", ".").replace(":", "\:")
     else:
         res += "\n日历更新时间: 未知"
 

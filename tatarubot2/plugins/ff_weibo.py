@@ -67,7 +67,8 @@ async def run():
             weibo_title = "这条格式好像不对呢？"
 
         weibo_time = " ".join(weibo_time.split(" ")[:4])
-        return_list.append("【" + str(i + 1) + "】[" + weibo_title + "](" + weibo_url + ") " + weibo_time)
+        return_list.append("【" + str(i + 1) + "】[" + weibo_title + "](" + weibo_url + ") "
+                           + weibo_time.replace(":", "\:"))
 
     res = "\n".join(return_list)
 
